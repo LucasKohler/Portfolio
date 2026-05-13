@@ -7,7 +7,7 @@ const variantClasses: Record<BadgeVariant, string> = {
   default: "border-border bg-[rgba(255,255,255,0.05)] text-muted",
   primary: "border-primary/40 bg-primary/10 text-primary",
   cyan: "border-cyan-400/35 bg-cyan-400/10 text-cyan-200",
-  muted: "border-border bg-surface-inset text-[#6f7480]",
+  muted: "border-border bg-surface-inset text-muted",
 };
 
 type BadgeProps = ComponentPropsWithoutRef<"span"> & {
@@ -26,4 +26,3 @@ export function Badge({ className, variant = "default", ...props }: BadgeProps) 
     />
   );
 }
-

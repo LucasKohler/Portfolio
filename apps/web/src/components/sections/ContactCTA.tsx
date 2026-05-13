@@ -2,15 +2,23 @@ import { ArrowRight, FileText, GitBranch, Mail } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/cn";
 
-export function ContactCTA() {
+type ContactCTAProps = {
+  compact?: boolean;
+};
+
+export function ContactCTA({ compact = false }: ContactCTAProps) {
   return (
     <SectionContainer
-      className="border-t border-border py-18 text-center md:py-20"
+      className={cn(
+        "border-t border-border text-center",
+        compact ? "py-16 md:py-18" : "py-18 md:py-20",
+      )}
       id="contact"
     >
       <h2 className="mx-auto max-w-3xl text-3xl font-semibold leading-tight tracking-normal text-foreground md:text-4xl">
-        Let&apos;s build reliable software with measurable impact.
+        Let’s build reliable software with measurable impact.
       </h2>
 
       <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-muted">

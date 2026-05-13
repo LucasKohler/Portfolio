@@ -1,25 +1,16 @@
 import { ArrowRight, Code2, ExternalLink, Lock, MonitorUp } from "lucide-react";
 import Link from "next/link";
+import { ProjectStatusBadge } from "@/components/projects/ProjectStatusBadge";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { cn } from "@/lib/cn";
 import { routes } from "@/lib/routes";
 import type { ProjectSummary } from "@/types/project";
 
 type ProjectCardProps = {
   project: ProjectSummary;
+  variant?: "default" | "compact";
 };
-
-function getStatusVariant(status: ProjectSummary["status"]) {
-  if (status === "Case Study") {
-    return "cyan";
-  }
-
-  if (status === "In Progress" || status === "Live Demo") {
-    return "primary";
-  }
-
-  return "muted";
-}
 
 function ProjectLinkIcon({ project }: ProjectCardProps) {
   if (project.liveUrl) {
@@ -37,34 +28,58 @@ function ProjectLinkIcon({ project }: ProjectCardProps) {
   return <MonitorUp aria-hidden="true" size={18} />;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, variant = "default" }: ProjectCardProps) {
   const primaryCategory = project.category[0] ?? "Project";
+  const isCompact = variant === "compact";
 
   return (
     <Card
-      className="group flex min-h-[19rem] flex-col overflow-hidden p-0"
+      className={cn(
+        "group flex flex-col overflow-hidden p-0",
+        isCompact ? "min-h-[18rem]" : "min-h-[27rem]",
+      )}
       interactive
     >
-      <div className="flex min-h-14 items-center justify-between gap-4 border-b border-border px-6 py-4">
-        <Badge variant={getStatusVariant(project.status)}>{project.status}</Badge>
-        <span className="text-right font-mono text-xs text-muted">
+      <div
+        className={cn(
+          "flex min-h-14 items-center justify-between gap-4 border-b border-border px-6 py-4",
+          isCompact && "px-5 py-3",
+        )}
+      >
+        <ProjectStatusBadge status={project.status} />
+        <span className="text-right font-mono text-xs leading-5 text-muted">
           {project.category.join(" / ")}
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col px-6 py-7">
+      <div
+        className={cn(
+          "flex flex-1 flex-col px-6 py-7",
+          isCompact && "px-5 py-5",
+        )}
+      >
         <p className="mb-3 font-mono text-xs text-primary/80">
           {primaryCategory}
         </p>
-        <h3 className="text-2xl font-semibold leading-tight tracking-normal text-foreground">
+        <h3
+          className={cn(
+            "font-semibold leading-tight tracking-normal text-foreground",
+            isCompact ? "text-xl" : "text-2xl md:text-3xl",
+          )}
+        >
           {project.title}
         </h3>
-        <p className="mt-4 line-clamp-4 text-base leading-7 text-muted">
+        <p
+          className={cn(
+            "mt-4 text-base leading-7 text-muted",
+            isCompact ? "line-clamp-3" : "line-clamp-5",
+          )}
+        >
           {project.summary || project.description}
         </p>
 
-        <div className="mt-7 flex flex-wrap gap-2">
-          {project.stack.slice(0, 4).map((item) => (
+        <div className="mt-auto flex flex-wrap gap-2 pt-7">
+          {project.stack.slice(0, isCompact ? 3 : 5).map((item) => (
             <Badge key={item} variant="muted">
               {item}
             </Badge>
@@ -73,7 +88,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       <Link
-        className="flex min-h-14 items-center justify-between gap-4 border-t border-border bg-surface-inset px-6 font-mono text-sm font-semibold text-foreground transition-colors group-hover:text-primary"
+        className={cn(
+          "flex min-h-14 items-center justify-between gap-4 border-t border-border bg-surface-inset px-6 font-mono text-sm font-semibold text-foreground transition-colors group-hover:text-primary",
+          isCompact && "px-5",
+        )}
         href={routes.projectDetail(project.slug)}
       >
         <span>View Project</span>

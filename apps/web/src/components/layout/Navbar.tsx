@@ -12,7 +12,6 @@ const navItems = [
   { label: "Journey", href: "/#journey", activePaths: [] },
   { label: "Skills", href: "/#skills", activePaths: [] },
   { label: "Projects", href: routes.projects, activePaths: [routes.projects] },
-  { label: "Contact", href: "/#contact", activePaths: [] },
 ];
 
 export function Navbar() {
@@ -32,7 +31,17 @@ export function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-2 md:flex">
-          {navItems.map((item) => {
+          {[
+            ...navItems,
+            {
+              label: "Contact",
+              href:
+                pathname === routes.home || pathname === routes.projects
+                  ? "#contact"
+                  : "/#contact",
+              activePaths: [],
+            },
+          ].map((item) => {
             const isActive =
               item.activePaths.includes(pathname) ||
               (item.href === routes.projects &&
@@ -74,4 +83,3 @@ export function Navbar() {
     </header>
   );
 }
-

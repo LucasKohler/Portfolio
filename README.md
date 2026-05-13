@@ -1,285 +1,337 @@
-# Lucas Kohler Marques — Portfolio Platform
+# Lucas Kohler Marques Portfolio Platform
 
-Personal portfolio platform for **Lucas Kohler Marques**, a Software Engineer focused on fullstack systems, performance, architecture and AI-assisted development.
+A fullstack portfolio platform built as a real software project, not as a static one-page site.
 
-This repository is designed to be both:
+The application presents engineering projects, case studies and technical notes through a Next.js frontend backed by an ASP.NET Core API. Project data is owned by the backend so the frontend can stay focused on rendering routes, interactions and reusable UI components.
 
-1. A professional portfolio for recruiters, hiring managers and tech leads.
-2. A public technical showcase of modern frontend, backend, Docker and architecture practices.
+## Goals
 
----
+- Present a polished technical portfolio with a dark premium SaaS visual direction.
+- Keep project content dynamic and easy to extend over time.
+- Demonstrate a simple but professional monorepo with frontend, backend, Docker and tests.
+- Avoid fake metrics, fake business claims and one-off project pages.
+- Keep the codebase ready for future deployment, database-backed content and CI/CD.
 
-## Positioning
-
-**Software Engineer focused on fullstack systems, performance and AI-assisted development.**
-
-Core areas:
-
-- Next.js / React / TypeScript
-- .NET / C# / ASP.NET Core
-- SQL Server / data modeling / query optimization
-- APIs, dashboards and business systems
-- Dockerized development
-- Architecture and maintainability
-- AI-assisted engineering workflows
-
----
-
-## Project Goals
-
-This project must demonstrate:
-
-- A polished, recruiter-friendly UI
-- A scalable project matrix
-- Dynamic project detail pages
-- Frontend and backend integration
-- Clean monorepo organization
-- Dockerized local development
-- Extensible architecture for adding projects over time
-- Honest technical case studies without fake metrics or fake claims
-
----
-
-## Tech Stack
+## Stack
 
 ### Frontend
 
-- Next.js
+- Next.js App Router
 - React
-- TypeScript
+- TypeScript with strict mode
 - Tailwind CSS
 - Framer Motion
-- lucide-react, if icons are needed
+- lucide-react
+- ESLint
 
 ### Backend
 
-- .NET LTS
-- ASP.NET Core
+- .NET 10 LTS
+- ASP.NET Core API
 - C#
+- Minimal API endpoint groups
 - OpenAPI
-- Scalar, if compatible with the selected .NET version
-- Health checks
-- CORS
-- Validation for request DTOs
+- Scalar API reference
+- CORS configuration
+- xUnit tests
 
 ### Infrastructure
 
 - Docker
 - Docker Compose
-- `.env.example`
-- Separate Dockerfiles for web and API
-
-### Quality
-
-- TypeScript strict mode
-- ESLint
-- Prettier, if configured
-- dotnet format
-- .editorconfig
-- Build/lint validation
-- Future GitHub Actions support
-
----
-
-## Version Policy
-
-Use the latest stable versions available at implementation time.
-
-Prefer LTS versions:
-
-- Latest .NET LTS, currently `.NET 10 LTS` unless a newer official LTS exists.
-- Latest Node.js LTS.
-- Latest stable Next.js.
-
-Do not use preview, alpha, beta, canary or nightly releases unless explicitly requested.
-
----
+- Separate `web` and `api` services
+- `.env.example` for local configuration
+- `.editorconfig` for formatting consistency
 
 ## Repository Structure
-
-Recommended structure:
 
 ```txt
 /
   apps/
     web/
-      # Next.js frontend
+      src/
+        app/
+        components/
+        config/
+        lib/
+        types/
+      Dockerfile
 
     api/
-      # .NET backend
+      src/
+        Portfolio.Api/
+        Portfolio.Application/
+        Portfolio.Domain/
+        Portfolio.Infrastructure/
+      tests/
+        Portfolio.Api.Tests/
+        Portfolio.Application.Tests/
+      Dockerfile
+      Portfolio.slnx
 
-  stitch-export/
-    # Google Stitch export folder, or the existing export folder name
-
-  AGENTS.md
-  DESIGN.md
-  README.md
-  PRODUCT.md
-  ROUTES.md
-  COMPONENTS.md
-  CONTENT.md
-  IMPLEMENTATION_PLAN.md
-  ACCEPTANCE_CRITERIA.md
-  CODEX_PROMPTS.md
+  stitch_the_kohler_portfolio/
+    # Google Stitch export used as visual reference only
 
   docker-compose.yml
   docker-compose.override.yml
   .env.example
   .editorconfig
   .gitignore
+  .nvmrc
+  global.json
 ```
 
-Backend internal structure:
+## Environment
+
+Runtime versions are pinned or documented through project files:
+
+- Node.js: `.nvmrc` uses `24`
+- Frontend package engine: `node >=24`
+- .NET SDK: `global.json` uses `10.0.201`
+- Docker images: `node:24-alpine`, `mcr.microsoft.com/dotnet/sdk:10.0`, `mcr.microsoft.com/dotnet/aspnet:10.0`
+
+Copy `.env.example` when creating local environment-specific files. Do not commit secrets.
 
 ```txt
-apps/api/
-  src/
-    Portfolio.Api/
-    Portfolio.Application/
-    Portfolio.Domain/
-    Portfolio.Infrastructure/
-
-  tests/
-    Portfolio.Api.Tests/
-    Portfolio.Application.Tests/
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
+INTERNAL_API_BASE_URL=http://api:8080
+ASPNETCORE_ENVIRONMENT=Development
+ASPNETCORE_URLS=http://+:8080
+PORTFOLIO__CORS__ALLOWEDORIGINS__0=http://localhost:3000
+WEB_PORT=3000
+API_PORT=5000
 ```
 
-Frontend internal structure:
+## Running Locally Without Docker
+
+Start the API:
+
+```bash
+dotnet run --project apps/api/src/Portfolio.Api/Portfolio.Api.csproj --urls http://localhost:5000
+```
+
+Start the web app in another terminal:
+
+```bash
+cd apps/web
+npm install
+npm run dev
+```
+
+For local non-Docker development, the frontend defaults to `http://localhost:5000` for server-side API calls. If you need to override it:
+
+```bash
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
+INTERNAL_API_BASE_URL=http://localhost:5000
+```
+
+Local URLs:
 
 ```txt
-apps/web/
-  src/
-    app/
-    components/
-    lib/
-    types/
-    config/
+Frontend: http://localhost:3000
+API:      http://localhost:5000
+Scalar:   http://localhost:5000/scalar
+OpenAPI:  http://localhost:5000/openapi/v1.json
 ```
 
----
+## Running Locally With Docker
 
-## Expected Frontend Routes
+Build and start the stack from the repository root:
+
+```bash
+docker compose up --build
+```
+
+Services:
 
 ```txt
-/
-  Home page
-
-/projects
-  Projects index page with searchable/filterable matrix
-
-/projects/[slug]
-  Dynamic project detail page
+web -> http://localhost:3000
+api -> http://localhost:5000
 ```
 
----
+The Compose setup uses:
 
-## Expected Backend API
+- `docker-compose.yml` for production-oriented service definitions.
+- `docker-compose.override.yml` for development targets, mounted source folders and watch-friendly settings.
+- An API healthcheck at `/api/health`.
+- `INTERNAL_API_BASE_URL=http://api:8080` so the web container can call the API container.
+
+## Frontend Routes
+
+```txt
+/                  Home page
+/projects          Projects index with search and category filters
+/projects/[slug]   Dynamic project detail page
+```
+
+Project detail pages are generated from API data by slug. There are no manually created pages per project.
+
+## Backend Endpoints
 
 ```txt
 GET  /api/health
 GET  /api/projects
 GET  /api/projects/{slug}
 POST /api/contact
+GET  /openapi/v1.json
+GET  /scalar
 ```
 
-The backend is the preferred source of truth for project data in version 1.
+Endpoint behavior:
 
-The frontend should consume the API instead of duplicating project content.
+- `/api/health` returns service status.
+- `/api/projects` returns summary data for project cards and featured work.
+- `/api/projects/{slug}` returns full project detail data or `404`.
+- `/api/contact` validates a contact payload and returns an honest accepted response. Email delivery is not configured yet and no message is sent or stored.
 
----
+## Project Data Model
 
-## Design Reference
-
-The UI was designed in Google Stitch.
-
-The Stitch export folder is located at the project root.
-
-Use it as reference for:
-
-- Visual hierarchy
-- Layout
-- Spacing
-- Typography direction
-- Component appearance
-- Page structure
-- Assets
-
-Do not treat the exported code as final production architecture.
-
-The final implementation must follow:
-
-- `AGENTS.md`
-- `DESIGN.md`
-- `ROUTES.md`
-- `COMPONENTS.md`
-- `ACCEPTANCE_CRITERIA.md`
-
----
-
-## How Projects Should Be Added
-
-Projects must be added through the backend data source, not by manually creating one page per project.
-
-Initial data source may be:
+Project content is owned by the backend in:
 
 ```txt
 apps/api/src/Portfolio.Infrastructure/Data/projects.json
 ```
 
-A project should support:
+The backend maps JSON records into domain models, then exposes explicit DTOs from the application/API layers. The frontend mirrors the response shape with TypeScript types in:
 
-- slug
-- title
-- description
-- summary
-- category
-- status
-- stack
-- featured
-- repositoryUrl
-- liveUrl
-- overview
-- purpose
-- technicalHighlights
-- implementationNotes
-- nextSteps
+```txt
+apps/web/src/types/project.ts
+```
 
-Future versions may migrate this to a database, CMS or MDX-based content system.
+Each project supports:
 
----
+```txt
+slug
+title
+description
+summary
+category
+status
+stack
+featured
+repositoryUrl
+liveUrl
+overview
+purpose
+technicalHighlights
+implementationNotes
+nextSteps
+```
 
-## Docker Development
+Allowed status labels:
 
-Expected commands after setup:
+```txt
+In Progress
+Case Study
+Draft
+Private Repository
+Live Demo
+Coming Soon
+```
+
+## Adding New Projects
+
+1. Add a new record to `apps/api/src/Portfolio.Infrastructure/Data/projects.json`.
+2. Use a stable, URL-safe `slug`.
+3. Keep `repositoryUrl` and `liveUrl` as `null` unless the links are real.
+4. Set `featured: true` only for projects that should appear on the Home page.
+5. Use existing `category` and `status` values unless the domain enums, backend parser and frontend types are updated together.
+6. Run backend tests and frontend build after changing the data.
+
+Useful validation commands:
 
 ```bash
-docker compose up --build
+dotnet test apps/api/Portfolio.slnx
+cd apps/web && npm run build
 ```
 
-Expected services:
+## Build and Validation
+
+Frontend:
+
+```bash
+cd apps/web
+npm run lint
+npm run build
+```
+
+Backend:
+
+```bash
+dotnet build apps/api/Portfolio.slnx
+dotnet test apps/api/Portfolio.slnx
+dotnet format apps/api/Portfolio.slnx --verify-no-changes
+```
+
+Docker:
+
+```bash
+docker compose build
+docker compose up
+```
+
+## Deployment Notes
+
+The project is prepared for future deployment but is not tied to a provider yet.
+
+Possible paths:
+
+- Deploy both services as containers using Azure Container Apps, Azure App Service, Render, Fly.io, Railway or a VPS.
+- Deploy the frontend separately on Vercel and the API on a .NET-friendly host.
+- Add CI/CD to run frontend lint/build, backend build/test and Docker build before release.
+
+Before deploying:
+
+- Replace placeholder external links in `apps/web/src/config/site.ts`.
+- Configure production API base URLs.
+- Configure CORS for the production frontend origin.
+- Decide whether project data remains JSON-based or moves to a database, CMS or MDX content flow.
+- Configure a real email provider before turning `/api/contact` into a delivery endpoint.
+
+## Design Reference
+
+The Google Stitch export lives in:
 
 ```txt
-web
-api
+stitch_the_kohler_portfolio/
 ```
 
-Expected local URLs:
+It was used as visual and contextual reference for:
+
+- Dark premium SaaS identity
+- Typography scale
+- Section spacing
+- Cards, badges and button hierarchy
+- Home, projects index and project detail layouts
+- Footer and contact section consistency
+
+The exported HTML was not copied as the final architecture. The implementation uses reusable React components, backend-owned project data and a clean monorepo structure.
+
+Reference screenshots are also kept at the repository root:
 
 ```txt
-Frontend: http://localhost:3000
-API:      http://localhost:5000 or http://localhost:8080
-Docs:     /scalar, /docs or equivalent
+Portfolio - Home.png
+Projects Index.png
+Project Detail.png
 ```
 
-Exact ports should be documented after implementation.
+## Codex Workflow
 
----
+Codex was used as an implementation partner through staged prompts:
 
-## Key Rules
+1. Planning and Stitch export inspection.
+2. Monorepo, Docker and tooling setup.
+3. Backend foundation, project API and contact placeholder.
+4. Frontend foundation, shared UI primitives and API client.
+5. Home page, projects index and dynamic project detail.
+6. Contact/footer consistency, responsive polish and final technical review.
+7. README and repository documentation polish.
 
-- Do not hardcode project pages manually.
-- Do not duplicate project content in frontend and backend.
-- Do not invent fake metrics or fake professional results.
-- Do not create multiple footer versions.
-- Do not add unnecessary libraries.
-- Keep the codebase extensible and easy to reason about.
+The workflow intentionally kept implementation incremental so architecture, content, design and validation could be reviewed between phases.
+
+## Current Known Follow-ups
+
+- Configure real GitHub, LinkedIn, resume and contact links.
+- Run Docker validation in an environment where the Docker CLI is available.
+- Add CI once the repository is connected to GitHub.
+- Add production deployment documentation after choosing the target platform.
