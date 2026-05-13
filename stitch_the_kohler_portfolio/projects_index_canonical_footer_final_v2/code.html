@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Selected Engineering Projects | Lucas Kohler Marques</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "surface-tint": "#adc6ff",
+                        "secondary-fixed": "#f0dbff",
+                        "on-primary-container": "#00285d",
+                        "on-primary-fixed-variant": "#004395",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary": "#003640",
+                        "primary-container": "#4d8eff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "on-tertiary-container": "#002f38",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#005ac2",
+                        "primary": "#adc6ff",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "error-container": "#93000a",
+                        "secondary": "#ddb7ff",
+                        "outline-variant": "#424754",
+                        "surface-container": "#201f1f",
+                        "tertiary-fixed": "#acedff",
+                        "surface": "#131313",
+                        "on-secondary-fixed": "#2c0051",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary": "#4cd7f6",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-surface": "#e5e2e1",
+                        "on-primary": "#002e6a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-variant": "#353534",
+                        "on-primary-fixed": "#001a42",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-dim": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#009eb9",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-secondary-container": "#d6a9ff",
+                        "outline": "#8c909f",
+                        "background": "#131313",
+                        "secondary-container": "#6f00be",
+                        "on-secondary": "#490080",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "surface-bright": "#3a3939",
+                        "on-background": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "xl": "80px",
+                        "base": "4px",
+                        "lg": "48px",
+                        "container-max": "1200px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Geist"],
+                        "label-mono": ["JetBrains Mono"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "label-mono": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .project-card {
+            background-image: radial-gradient(circle at top right, rgba(255,255,255,0.03), transparent 50%);
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+            border-color: #444;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #e5e2e1, #8c909f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style data-stitch-cursor=""></style><style data-stitch-scroll-lock=""></style></head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="font-display-lg text-body-lg font-bold tracking-tight text-on-surface">
+                Lucas Kohler Marques
+            </div>
+<div class="hidden md:flex items-center space-x-sm">
+<a class="text-on-surface-variant font-body-md hover:text-on-surface transition-colors px-sm py-xs rounded hover:bg-surface-container-highest/50 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Home</a>
+<a class="text-on-surface-variant font-body-md hover:text-on-surface transition-colors px-sm py-xs rounded hover:bg-surface-container-highest/50 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Journey</a>
+<a class="text-on-surface-variant font-body-md hover:text-on-surface transition-colors px-sm py-xs rounded hover:bg-surface-container-highest/50 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Skills</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 px-sm py-xs rounded hover:bg-surface-container-highest/50 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Projects</a>
+<a class="text-on-surface-variant font-body-md hover:text-on-surface transition-colors px-sm py-xs rounded hover:bg-surface-container-highest/50 transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-xs">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-xs rounded hover:bg-surface-container-highest/50 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-xs rounded hover:bg-surface-container-highest/50 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">code</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-xl px-gutter max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<header class="mb-xl max-w-3xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-md tracking-tight">
+                Selected <span class="gradient-text">Engineering Projects</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant opacity-90">
+                A growing collection of software engineering projects, case studies, experiments and technical implementations.
+            </p>
+</header>
+<!-- Search and Filter Bar -->
+<section class="mb-lg flex flex-col md:flex-row gap-sm items-start md:items-center">
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-[#050505] border border-[#222] text-on-surface font-body-md rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors" placeholder="Search projects..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-xs"><button class="font-label-mono text-label-mono px-3 py-1 rounded bg-surface-container-high border border-primary text-on-surface">All</button>
+<button class="font-label-mono text-label-mono px-3 py-1 rounded bg-[rgba(255,255,255,0.05)] border border-[#222] text-on-surface-variant hover:border-[#444] transition-colors">Fullstack</button>
+<button class="font-label-mono text-label-mono px-3 py-1 rounded bg-[rgba(255,255,255,0.05)] border border-[#222] text-on-surface-variant hover:border-[#444] transition-colors">Frontend</button>
+<button class="font-label-mono text-label-mono px-3 py-1 rounded bg-[rgba(255,255,255,0.05)] border border-[#222] text-on-surface-variant hover:border-[#444] transition-colors">Backend</button>
+<button class="font-label-mono text-label-mono px-3 py-1 rounded bg-[rgba(255,255,255,0.05)] border border-[#222] text-on-surface-variant hover:border-[#444] transition-colors">Data</button>
+<button class="font-label-mono text-label-mono px-3 py-1 rounded bg-[rgba(255,255,255,0.05)] border border-[#222] text-on-surface-variant hover:border-[#444] transition-colors">AI Workflow</button>
+<button class="font-label-mono text-label-mono px-3 py-1 rounded bg-[rgba(255,255,255,0.05)] border border-[#222] text-on-surface-variant hover:border-[#444] transition-colors">Architecture</button></div>
+</section>
+<!-- Project Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md"><!-- Project 1 -->
+<article class="project-card bg-[#0A0A0A] border border-[#222] rounded-xl overflow-hidden flex flex-col h-full group relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="p-sm flex justify-between items-start border-b border-[#222]/50">
+<span class="font-label-mono text-caption text-primary border border-primary/30 bg-primary/10 px-2 py-0.5 rounded">In Progress</span>
+<span class="font-label-mono text-caption text-on-surface-variant">Frontend / Portfolio</span>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Portfolio Platform</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-md opacity-90">
+            A modern, high-performance portfolio platform built to showcase engineering projects with a focus on typography, layout, and subtle interactive details.
+        </p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">React</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">TypeScript</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Next.js</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Tailwind</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Framer Motion</span>
+</div>
+</div>
+<div class="p-sm border-t border-[#222]/50 flex justify-between items-center bg-[#050505]/50 mt-auto">
+<button class="font-label-mono text-label-mono text-on-surface hover:text-primary transition-colors flex items-center gap-1">
+            View Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<div class="flex gap-2">
+<a class="text-outline-variant hover:text-on-surface transition-colors" href="#"><span class="material-symbols-outlined">code</span></a>
+<a class="text-outline-variant hover:text-on-surface transition-colors" href="#"><span class="material-symbols-outlined">open_in_new</span></a>
+</div>
+</div>
+</article>
+<!-- Project 2 -->
+<article class="project-card bg-[#0A0A0A] border border-[#222] rounded-xl overflow-hidden flex flex-col h-full group relative">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="p-sm flex justify-between items-start border-b border-[#222]/50">
+<span class="font-label-mono text-caption text-tertiary border border-tertiary/30 bg-tertiary/10 px-2 py-0.5 rounded">Case Study</span>
+<span class="font-label-mono text-caption text-on-surface-variant">Data / Backend</span>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Data Migration &amp; SQL Modeling</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-md opacity-90">
+            Developing complex SQL schemas and high-performance data migration scripts to handle large-scale enterprise data transitions.
+        </p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">SQL Server</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Python</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">.NET</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Data Modeling</span>
+</div>
+</div>
+<div class="p-sm border-t border-[#222]/50 flex justify-between items-center bg-[#050505]/50 mt-auto">
+<button class="font-label-mono text-label-mono text-on-surface hover:text-tertiary transition-colors flex items-center gap-1">
+            Read Full Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<div class="flex gap-2">
+<a class="text-outline-variant hover:text-on-surface transition-colors" href="#"><span class="material-symbols-outlined">database</span></a>
+</div>
+</div>
+</article>
+<!-- Project 3 -->
+<article class="project-card bg-[#0A0A0A] border border-[#222] rounded-xl overflow-hidden flex flex-col h-full group relative">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="p-sm flex justify-between items-start border-b border-[#222]/50">
+<span class="font-label-mono text-caption text-secondary border border-secondary/30 bg-secondary/10 px-2 py-0.5 rounded">Case Study</span>
+<span class="font-label-mono text-caption text-on-surface-variant">Backend / Performance</span>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">API Performance Optimization</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-md opacity-90">
+            A deep dive into reducing latency for .NET Core APIs by implementing strategic caching, connection pooling, and asynchronous data processing.
+        </p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">C#</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">.NET</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">SQL Server</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">APIs</span>
+</div>
+</div>
+<div class="p-sm border-t border-[#222]/50 flex justify-between items-center bg-[#050505]/50 mt-auto">
+<button class="font-label-mono text-label-mono text-on-surface hover:text-secondary transition-colors flex items-center gap-1">
+            View Analysis <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<div class="flex gap-2">
+<a class="text-outline-variant hover:text-on-surface transition-colors" href="#"><span class="material-symbols-outlined">speed</span></a>
+</div>
+</div>
+</article>
+<!-- Project 4 -->
+<article class="project-card bg-[#0A0A0A] border border-[#222] rounded-xl overflow-hidden flex flex-col h-full group relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="p-sm flex justify-between items-start border-b border-[#222]/50">
+<span class="font-label-mono text-caption text-primary border border-primary/30 bg-primary/10 px-2 py-0.5 rounded">Case Study</span>
+<span class="font-label-mono text-caption text-on-surface-variant">Frontend / Data</span>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Business Dashboard Interface</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-md opacity-90">
+            Engineering a responsive and performant dashboard for visualizing real-time financial metrics using React and specialized charting libraries.
+        </p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">React</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">TypeScript</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Charts</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Tailwind</span>
+</div>
+</div>
+<div class="p-sm border-t border-[#222]/50 flex justify-between items-center bg-[#050505]/50 mt-auto">
+<button class="font-label-mono text-label-mono text-on-surface hover:text-primary transition-colors flex items-center gap-1">
+            Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Project 5 -->
+<article class="project-card bg-[#0A0A0A] border border-[#222] rounded-xl overflow-hidden flex flex-col h-full group relative">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="p-sm flex justify-between items-start border-b border-[#222]/50">
+<span class="font-label-mono text-caption text-outline-variant border border-[#222] bg-[#050505] px-2 py-0.5 rounded">Draft</span>
+<span class="font-label-mono text-caption text-on-surface-variant">AI Workflow</span>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">AI-Assisted Development Workflow</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-md opacity-90">
+            Exploring the integration of LLMs into the SDLC to automate documentation, unit testing, and initial architectural drafting.
+        </p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">ChatGPT</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Claude</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Codex</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">GitHub</span>
+</div>
+</div>
+<div class="p-sm border-t border-[#222]/50 flex justify-between items-center bg-[#050505]/50 mt-auto opacity-50">
+<button class="font-label-mono text-label-mono text-on-surface flex items-center gap-1 cursor-not-allowed">
+            Drafting in Progress <span class="material-symbols-outlined text-sm">edit_document</span>
+</button>
+</div>
+</article>
+<!-- Project 6 -->
+<article class="project-card bg-[#0A0A0A] border border-[#222] rounded-xl overflow-hidden flex flex-col h-full group relative">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="p-sm flex justify-between items-start border-b border-[#222]/50">
+<span class="font-label-mono text-caption text-outline-variant border border-[#222] bg-[#050505] px-2 py-0.5 rounded">Draft</span>
+<span class="font-label-mono text-caption text-on-surface-variant">Architecture</span>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Architecture Refactoring Notes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-md opacity-90">
+            Conceptual notes and diagrams on transitioning from a monolithic system to a Clean Architecture pattern with Domain-Driven Design principles.
+        </p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">.NET</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">React</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">TypeScript</span>
+<span class="font-label-mono text-caption px-2 py-1 bg-[#050505] border border-[#222] rounded text-outline-variant">Clean Architecture</span>
+</div>
+</div>
+<div class="p-sm border-t border-[#222]/50 flex justify-between items-center bg-[#050505]/50 mt-auto opacity-50">
+<button class="font-label-mono text-label-mono text-on-surface flex items-center gap-1 cursor-not-allowed">
+            Coming Soon <span class="material-symbols-outlined text-sm">lock</span>
+</button>
+</div>
+</article></div>
+<!-- CTA Section -->
+<section class="mt-xl pt-lg border-t border-[#222]/50 text-center flex flex-col items-center"><h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Want to discuss a project or opportunity?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-md opacity-90">
+    I’m available for Software Engineering roles, with specialized focus on Fullstack, Backend (.NET/SQL), and AI-augmented development.
+</p>
+<div class="flex flex-wrap gap-sm justify-center">
+<a class="px-6 py-3 bg-primary text-on-primary font-body-md font-medium rounded hover:bg-primary/90 transition-colors" href="#">Contact Me</a>
+<a class="px-6 py-3 bg-[#0A0A0A] border border-[#222] text-on-surface font-body-md font-medium rounded hover:border-[#444] transition-colors flex items-center gap-2" href="#">View Resume</a>
+<a class="px-6 py-3 bg-[#0A0A0A] border border-[#222] text-on-surface font-body-md font-medium rounded hover:border-[#444] transition-colors flex items-center gap-2" href="#">View GitHub</a>
+<a class="px-6 py-3 bg-[#0A0A0A] border border-[#222] text-on-surface font-body-md font-medium rounded hover:border-[#444] transition-colors flex items-center gap-2" href="#">LinkedIn</a>
+</div></section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-xl border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-md"><div>
+<div class="font-display-lg text-headline-md text-on-surface mb-1">Lucas Kohler Marques</div>
+<div class="font-body-md text-on-surface-variant mb-2">Software Engineer</div>
+<p class="font-body-md text-caption text-secondary/60">Built with modern web technologies.</p>
+</div>
+<div class="flex flex-wrap gap-md md:justify-end items-center font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Email</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Resume</a>
+</div></div>
+</footer>
+</body></html>

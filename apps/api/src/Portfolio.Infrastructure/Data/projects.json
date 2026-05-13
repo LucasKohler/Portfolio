@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "portfolio-platform",
+    "title": "Portfolio Platform",
+    "description": "A modern fullstack portfolio built with Next.js, .NET and Docker to present software engineering work, technical positioning and future case studies.",
+    "summary": "A personal portfolio built as a modern fullstack experience to present software engineering work, technical positioning and future case studies.",
+    "category": ["Frontend", "Fullstack", "Portfolio"],
+    "status": "In Progress",
+    "stack": ["Next.js", "TypeScript", ".NET", "Docker", "Tailwind CSS", "Framer Motion"],
+    "featured": true,
+    "repositoryUrl": null,
+    "liveUrl": null,
+    "overview": "This project is the foundation of my public engineering portfolio. It is designed to present my profile, skills, technical experiments and documented projects in a clear, scalable and recruiter-friendly way.",
+    "purpose": "The goal is to create a polished web experience that works both as a professional presentation and as a technical playground for modern frontend architecture, .NET API design, Dockerized development, routing, design systems and AI-assisted workflows.",
+    "technicalHighlights": [
+      "Next.js App Router frontend",
+      ".NET backend API for project data",
+      "Dockerized local development",
+      "SPA-style navigation and dynamic project routing",
+      "Reusable project card architecture",
+      "Scalable project data structure",
+      "Responsive interface design",
+      "Clean component organization",
+      "Professional copywriting and technical positioning"
+    ],
+    "implementationNotes": "Projects are rendered dynamically from backend-provided data, allowing new projects to be added without redesigning the page. Each project card routes to a dynamic detail page using a slug-based route such as /projects/portfolio-platform.",
+    "nextSteps": [
+      "Add real project case studies",
+      "Connect GitHub and live demo links when available",
+      "Improve project filtering",
+      "Add bilingual content support",
+      "Refine animations and accessibility",
+      "Prepare production deployment"
+    ]
+  },
+  {
+    "slug": "data-migration-sql-modeling",
+    "title": "Data Migration & SQL Modeling",
+    "description": "Case study about transforming document-based monthly data into a relational daily model, focusing on indexing, query performance and scalable reporting.",
+    "summary": "A data-focused case study about reshaping monthly document-style records into a relational model prepared for daily reporting and maintainable queries.",
+    "category": ["Data", "Backend"],
+    "status": "Case Study",
+    "stack": ["SQL Server", "Python", ".NET", "Data Modeling"],
+    "featured": true,
+    "repositoryUrl": null,
+    "liveUrl": null,
+    "overview": "This case study documents a migration-oriented data modeling exercise focused on replacing brittle document-shaped records with clearer relational structures.",
+    "purpose": "The purpose is to show practical judgment around schema design, indexing, migration scripts and reporting-oriented query patterns without depending on a public production dataset.",
+    "technicalHighlights": [
+      "Relational schema redesign",
+      "SQL Server indexing considerations",
+      "Migration script planning",
+      "Daily reporting model",
+      "Query readability and maintainability"
+    ],
+    "implementationNotes": "The project should be documented as a case study first, then expanded with anonymized schema examples and migration notes when the content is ready.",
+    "nextSteps": [
+      "Add anonymized schema examples",
+      "Document migration constraints",
+      "Include query design notes",
+      "Prepare repository material if it can be shared safely"
+    ]
+  },
+  {
+    "slug": "api-performance-optimization",
+    "title": "API Performance Optimization",
+    "description": "Technical write-up about improving backend response times through query optimization, parallelism, caching strategy and cleaner service boundaries.",
+    "summary": "A backend performance case study focused on API boundaries, query behavior, caching decisions and maintainable service design.",
+    "category": ["Backend", "Performance"],
+    "status": "Case Study",
+    "stack": ["C#", ".NET", "SQL Server", "APIs"],
+    "featured": true,
+    "repositoryUrl": null,
+    "liveUrl": null,
+    "overview": "This project explores how backend APIs can become easier to reason about when query work, caching decisions and service responsibilities are made explicit.",
+    "purpose": "The purpose is to document a realistic performance-improvement workflow without publishing fake benchmarks or unsupported production claims.",
+    "technicalHighlights": [
+      "API endpoint profiling workflow",
+      "SQL query optimization notes",
+      "Caching strategy boundaries",
+      "Asynchronous processing considerations",
+      "Cleaner service responsibility splits"
+    ],
+    "implementationNotes": "The write-up should focus on decision-making, tradeoffs and maintainability. Any future metrics should only be added if they come from a real measured scenario.",
+    "nextSteps": [
+      "Add profiling checklist",
+      "Document caching tradeoffs",
+      "Add sample API boundary diagrams",
+      "Include real measurements only when available"
+    ]
+  },
+  {
+    "slug": "business-dashboard-interface",
+    "title": "Business Dashboard Interface",
+    "description": "Frontend case study focused on dashboards, filters, charts, data visualization and responsive UI for business decision-making.",
+    "summary": "A frontend-oriented dashboard case study about organizing dense business data into a responsive and readable interface.",
+    "category": ["Frontend", "Data"],
+    "status": "Case Study",
+    "stack": ["React", "TypeScript", "Charts", "Tailwind CSS"],
+    "featured": false,
+    "repositoryUrl": null,
+    "liveUrl": null,
+    "overview": "This case study focuses on building dashboard interfaces that make filtering, scanning and comparison easier for recurring business workflows.",
+    "purpose": "The purpose is to document frontend architecture and UI decisions for data-heavy screens without adding fake business outcomes.",
+    "technicalHighlights": [
+      "Responsive dashboard layout",
+      "Filter and state organization",
+      "Chart component boundaries",
+      "Readable data presentation",
+      "Frontend performance considerations"
+    ],
+    "implementationNotes": "Future examples should use safe sample data and focus on interface structure, accessibility and state management.",
+    "nextSteps": [
+      "Define sample dataset",
+      "Add charting implementation notes",
+      "Document filter behavior",
+      "Expand responsive layout examples"
+    ]
+  },
+  {
+    "slug": "ai-assisted-development-workflow",
+    "title": "AI-Assisted Development Workflow",
+    "description": "Experiment documenting how AI tools can support analysis, prototyping, refactoring and code review while preserving engineering judgment.",
+    "summary": "An experiment about using AI tools as part of a disciplined software engineering workflow instead of as a replacement for review and design judgment.",
+    "category": ["AI Workflow"],
+    "status": "Draft",
+    "stack": ["ChatGPT", "Claude", "Codex", "GitHub"],
+    "featured": false,
+    "repositoryUrl": null,
+    "liveUrl": null,
+    "overview": "This project documents practical AI-assisted development patterns across analysis, prototyping, refactoring and review.",
+    "purpose": "The purpose is to show how AI tools can improve throughput while keeping architecture decisions, validation and accountability with the engineer.",
+    "technicalHighlights": [
+      "Prompt-driven implementation planning",
+      "Code review support",
+      "Refactoring workflow notes",
+      "Documentation drafting",
+      "Validation and guardrail practices"
+    ],
+    "implementationNotes": "This project should remain grounded in real workflow examples and avoid broad claims about productivity unless they can be supported.",
+    "nextSteps": [
+      "Document prompt patterns",
+      "Add review checklist examples",
+      "Show before-and-after refactoring notes",
+      "Define validation workflow"
+    ]
+  },
+  {
+    "slug": "architecture-refactoring-notes",
+    "title": "Architecture Refactoring Notes",
+    "description": "Technical notes about improving maintainability by separating responsibilities, reducing coupling and organizing code around clearer boundaries.",
+    "summary": "Architecture notes focused on maintainability, clearer module boundaries and incremental refactoring of application responsibilities.",
+    "category": ["Architecture"],
+    "status": "Draft",
+    "stack": [".NET", "React", "TypeScript", "Clean Architecture"],
+    "featured": false,
+    "repositoryUrl": null,
+    "liveUrl": null,
+    "overview": "This project collects architectural notes about moving from loosely organized code toward clearer boundaries and more explicit responsibilities.",
+    "purpose": "The purpose is to document practical refactoring judgment: what to move, what to leave alone and how to improve maintainability incrementally.",
+    "technicalHighlights": [
+      "Responsibility separation",
+      "Module boundary design",
+      "Incremental refactoring strategy",
+      "Clean Architecture concepts",
+      "Coupling reduction notes"
+    ],
+    "implementationNotes": "The project should be expanded with concrete examples only when they can be shown without exposing private code or inventing context.",
+    "nextSteps": [
+      "Add anonymized examples",
+      "Document refactoring decision criteria",
+      "Create lightweight diagrams",
+      "Connect examples to project detail pages"
+    ]
+  }
+]
