@@ -9,7 +9,6 @@ import { cn } from "@/lib/cn";
 
 const navItems = [
   { label: "Home", href: routes.home, activePaths: [routes.home] },
-  { label: "Journey", href: "/#journey", activePaths: [] },
   { label: "Skills", href: "/#skills", activePaths: [] },
   { label: "Projects", href: routes.projects, activePaths: [routes.projects] },
 ];
