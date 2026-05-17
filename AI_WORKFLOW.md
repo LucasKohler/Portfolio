@@ -42,17 +42,17 @@ Use reusable prompts in `.codex/prompts/` when the task follows a known pattern
 but does not need parallel agents. Prompts are task starters, not permission to
 skip repository inspection.
 
-Skills in `.agents/skills/` are a future step for repeatable workflows with
-specialized instructions. Do not claim a skill exists until its `SKILL.md` is
-present in the repository.
+Use skills in `.agents/skills/` when the task matches a structured reusable
+workflow. Skills are procedural guides for repeatable work; they complement
+prompts and agents, but do not replace repository inspection or validation.
 
 Repository AI files have different roles:
 
 - `AGENTS.md`: operational rules that agents must follow.
 - `.codex/agents/*.toml`: custom agent roles, permissions and instructions.
 - `.codex/prompts/*.md`: reusable task prompts.
-- `.agents/skills/*/SKILL.md`: future structured skills for repeatable
-  workflows.
+- `.agents/skills/*/SKILL.md`: structured reusable workflows for repeatable
+  engineering tasks.
 
 Recommended feature flow:
 

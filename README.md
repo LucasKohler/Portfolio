@@ -81,6 +81,24 @@ The application presents engineering projects, case studies and technical notes 
   global.json
 ```
 
+## Repository Map
+
+- `apps/api/`: .NET backend with API, application, domain, infrastructure and
+  backend tests.
+- `apps/web/`: Next.js frontend with App Router, reusable components, API
+  client helpers and frontend types.
+- `docs/`: technical documentation that benefits from hierarchy, including
+  architecture records and ADR templates.
+- `.codex/`: Codex configuration, custom agents and reusable prompts.
+- `.agents/skills/`: reusable Codex skills/workflows for repeatable engineering
+  tasks.
+- `docker-compose.yml` and `docker-compose.override.yml`: Docker Compose
+  environment for the web and API services.
+- Root documentation: `AGENTS.md`, `ARCHITECTURE.md`, `AI_WORKFLOW.md`,
+  `CONTRIBUTING.md`, `SECURITY.md`, `TESTING.md`, `CODING_STANDARDS.md`,
+  `DOMAIN.md` and `RELEASE_CHECKLIST.md` provide project rules, architecture,
+  workflow, contribution and quality guidance.
+
 ## Environment
 
 Runtime versions are pinned or documented through project files:
