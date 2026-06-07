@@ -63,6 +63,7 @@ Local tooling and environment setup.
 
 | File | Purpose |
 |------|---------|
+| [PLAN_BROKER_GUIDE.md](ops/PLAN_BROKER_GUIDE.md) | Complete PlanBroker usage: publish obligation, all commands, Notion integration |
 | [SETUP_MCP_FLOW.md](ops/SETUP_MCP_FLOW.md) | PlanBroker MCP flow setup (PT/mixed) |
 
 ### Analysis artifacts

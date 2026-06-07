@@ -1,5 +1,7 @@
 # Setup — Fluxo Nível 2: Grok Build → PlanBroker MCP → Cursor
 
+> **Uso completo como agente de planejamento** (obrigação de `publish_plan`, todos os cenários, chamadas MCP exatas, integração Notion): leia **[PLAN_BROKER_GUIDE.md](PLAN_BROKER_GUIDE.md)** primeiro. Este arquivo é o runbook de **setup único** + referência de arquitetura.
+
 Handoff entre **planejamento** (Grok Build) e **implementação** (Cursor) via MCP.
 
 ## Quick Start

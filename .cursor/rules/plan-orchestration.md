@@ -26,6 +26,8 @@ Antes de editar qualquer arquivo:
 3. Ler `AGENTS.md`, `ACCEPTANCE_CRITERIA.md` e docs relevantes ao escopo (backend/frontend).
 4. Listar os passos do plano e confirmar ordem de execução em uma mensagem curta ao usuário.
 
+**Catálogo completo de comandos, publicação obrigatória (Grok Build) e integração Notion:** [`docs/ops/PLAN_BROKER_GUIDE.md`](../../docs/ops/PLAN_BROKER_GUIDE.md).
+
 ## Padrões de implementação
 
 ### Escopo
