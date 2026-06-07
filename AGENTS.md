@@ -11,7 +11,8 @@ This repository is a personal portfolio platform for **Lucas Kohler Marques**, a
 - APIs, dashboards and business systems
 - Architecture, maintainability and scalability
 - Dockerized development and future deployment
-- AI-assisted development using ChatGPT, Claude and Codex
+- AI-assisted development using model-agnostic coding assistants and equivalent
+  tools
 
 The portfolio is not only a website. It is also a public technical showcase hosted on GitHub.
 
@@ -38,13 +39,17 @@ Before implementing or changing anything, always read:
 
 - `DESIGN.md`
 - `README.md`
-- `PRODUCT.md`
-- `ROUTES.md`
-- `COMPONENTS.md`
-- `CONTENT.md`
-- `IMPLEMENTATION_PLAN.md`
+- `docs/specs/PRODUCT.md`
+- `docs/specs/ROUTES.md`
+- `docs/specs/COMPONENTS.md`
+- `docs/specs/CONTENT.md`
+- `docs/process/IMPLEMENTATION_PLAN.md`
 - `ACCEPTANCE_CRITERIA.md`
-- `CODEX_PROMPTS.md`
+- `docs/ai/AI_PROMPTS.md`
+
+Detailed specs live under `docs/specs/`, architecture under `docs/architecture/`,
+AI workflow under `docs/ai/`, process under `docs/process/` and operations under
+`docs/ops/`. See `docs/README.md` for navigation.
 
 The Google Stitch export folder is located at the project root.
 
@@ -56,7 +61,7 @@ Decision hierarchy:
 1. AGENTS.md
 2. DESIGN.md
 3. ACCEPTANCE_CRITERIA.md
-4. ROUTES.md / COMPONENTS.md / CONTENT.md / PRODUCT.md
+4. docs/specs/ROUTES.md / docs/specs/COMPONENTS.md / docs/specs/CONTENT.md / docs/specs/PRODUCT.md
 5. Google Stitch export folder
 6. Screenshots/assets
 ```
@@ -104,16 +109,26 @@ Use a simple but professional monorepo:
     # Or the existing Stitch export folder name.
     # Visual reference only.
 
+  .agents/
+    agents/
+    prompts/
+    skills/
+    config.toml
+
   AGENTS.md
   DESIGN.md
   README.md
-  PRODUCT.md
-  ROUTES.md
-  COMPONENTS.md
-  CONTENT.md
-  IMPLEMENTATION_PLAN.md
   ACCEPTANCE_CRITERIA.md
-  CODEX_PROMPTS.md
+  CONTRIBUTING.md
+  SECURITY.md
+
+  docs/
+    README.md
+    specs/
+    architecture/
+    ai/
+    process/
+    ops/
 
   docker-compose.yml
   docker-compose.override.yml
@@ -655,13 +670,13 @@ unmerged agent responses.
 Custom agents live in:
 
 ```txt
-.codex/agents/
+.agents/agents/
 ```
 
 Global subagent limits live in:
 
 ```txt
-.codex/config.toml
+.agents/config.toml
 ```
 
 Current agents:
@@ -840,7 +855,7 @@ backend, Docker, CI/CD or unrelated docs. Run or report frontend validation.
 Reusable prompts live in:
 
 ```txt
-.codex/prompts/
+.agents/prompts/
 ```
 
 Use them as task starters, not as permission to ignore repository context. A

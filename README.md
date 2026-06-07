@@ -72,6 +72,26 @@ The application presents engineering projects, case studies and technical notes 
   stitch_the_kohler_portfolio/
     # Google Stitch export used as visual reference only
 
+  .agents/
+    agents/
+    prompts/
+    skills/
+    config.toml
+
+  docs/
+    README.md
+    specs/
+    architecture/
+    ai/
+    process/
+    ops/
+
+  AGENTS.md
+  DESIGN.md
+  ACCEPTANCE_CRITERIA.md
+  CONTRIBUTING.md
+  SECURITY.md
+
   docker-compose.yml
   docker-compose.override.yml
   .env.example
@@ -87,17 +107,30 @@ The application presents engineering projects, case studies and technical notes 
   backend tests.
 - `apps/web/`: Next.js frontend with App Router, reusable components, API
   client helpers and frontend types.
-- `docs/`: technical documentation that benefits from hierarchy, including
-  architecture records and ADR templates.
-- `.codex/`: Codex configuration, custom agents and reusable prompts.
-- `.agents/skills/`: reusable Codex skills/workflows for repeatable engineering
-  tasks.
+- `docs/`: detailed specifications, architecture notes, AI workflows, process
+  checklists and operational guides. Start at `docs/README.md`.
+- `.agents/`: model-agnostic AI workflow assets, including custom agents,
+  reusable prompts and structured skills.
 - `docker-compose.yml` and `docker-compose.override.yml`: Docker Compose
   environment for the web and API services.
-- Root documentation: `AGENTS.md`, `ARCHITECTURE.md`, `AI_WORKFLOW.md`,
-  `CONTRIBUTING.md`, `SECURITY.md`, `TESTING.md`, `CODING_STANDARDS.md`,
-  `DOMAIN.md` and `RELEASE_CHECKLIST.md` provide project rules, architecture,
-  workflow, contribution and quality guidance.
+- Root governance: `AGENTS.md`, `DESIGN.md`, `ACCEPTANCE_CRITERIA.md`,
+  `CONTRIBUTING.md` and `SECURITY.md`.
+- Detailed documentation under `docs/`: specs, architecture, AI workflow,
+  process and operations. See `docs/README.md`.
+
+## Documentation
+
+| Location | Purpose |
+|----------|---------|
+| `AGENTS.md` | Agent and contributor rules (highest priority) |
+| `DESIGN.md` | Visual contract |
+| `ACCEPTANCE_CRITERIA.md` | Enforcement checklist |
+| `docs/README.md` | Navigation hub for all detailed documentation |
+| `docs/specs/` | Product, routes, components and content |
+| `docs/architecture/` | Layering, domain model and coding standards |
+| `docs/ai/` | AI workflow and step-by-step prompts |
+| `docs/process/` | Implementation plan, testing and release |
+| `docs/ops/` | MCP flow and local tooling setup |
 
 ## Environment
 
@@ -333,9 +366,10 @@ Projects Index.png
 Project Detail.png
 ```
 
-## Codex Workflow
+## AI-Assisted Workflow
 
-Codex was used as an implementation partner through staged prompts:
+AI coding assistants can be used as implementation partners through staged
+prompts:
 
 1. Planning and Stitch export inspection.
 2. Monorepo, Docker and tooling setup.
@@ -345,7 +379,8 @@ Codex was used as an implementation partner through staged prompts:
 6. Contact/footer consistency, responsive polish and final technical review.
 7. README and repository documentation polish.
 
-The workflow intentionally kept implementation incremental so architecture, content, design and validation could be reviewed between phases.
+The workflow intentionally keeps implementation incremental so architecture,
+content, design and validation can be reviewed between phases.
 
 ## Current Known Follow-ups
 

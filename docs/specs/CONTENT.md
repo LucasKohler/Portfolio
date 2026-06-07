@@ -387,7 +387,7 @@ AI Workflow
 Stack:
 
 ```txt
-ChatGPT, Claude, Codex, GitHub
+AI Coding Assistants, GitHub
 ```
 
 Status:

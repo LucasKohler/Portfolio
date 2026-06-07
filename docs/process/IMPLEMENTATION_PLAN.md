@@ -27,7 +27,8 @@ Build incrementally:
 
 Before writing code:
 
-- Read all markdown files in the root.
+- Read the required references listed in `AGENTS.md` and navigate detailed
+  documentation via `docs/README.md`.
 - Read `DESIGN.md`.
 - Inspect the Google Stitch export folder.
 - Identify useful assets, layout references and design tokens.

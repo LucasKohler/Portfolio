@@ -16,8 +16,10 @@ to review, validate and evolve.
 
 ## Before You Start
 
-1. Read the relevant project documentation.
-2. Read `AI_WORKFLOW.md` when AI assistance or multi-agent review is involved.
+1. Read the relevant project documentation. Start with `docs/README.md` for
+   navigation.
+2. Read `docs/ai/AI_WORKFLOW.md` when AI assistance or multi-agent review is
+   involved.
 3. Run `git status --short --branch`.
 4. Identify the smallest useful change.
 5. Check the existing architecture before creating new patterns.
@@ -48,7 +50,7 @@ fix: correct contact validation
 refactor: simplify project mapper
 docs: update ai workflow
 test: add project contract tests
-chore: update codex agents
+chore: update ai agents
 ```
 
 Keep each commit focused on one reason to change.

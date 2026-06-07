@@ -1,8 +1,8 @@
-# CODEX_PROMPTS.md
+# AI_PROMPTS.md
 
 ## Como usar este arquivo
 
-Este arquivo é um roteiro de prompts para conduzir o Codex passo a passo na implementação do portfólio.
+Este arquivo é um roteiro de prompts para conduzir qualquer assistente de IA passo a passo na implementação do portfólio.
 
 Ele **não deve ser executado inteiro de uma vez**.
 
@@ -14,7 +14,7 @@ Use um prompt por etapa, revise o resultado e só então avance para a próxima 
 
 O projeto tem:
 
-- Arquivos `.md` de documentação na raiz.
+- Arquivos `.md` de governança na raiz e documentação detalhada em `docs/`.
 - `DESIGN.md` exportado pelo Google Stitch na raiz.
 - Uma pasta de exportação do Google Stitch na raiz do projeto.
 - Stack definida: Next.js no frontend, .NET no backend e Docker desde o início.
@@ -27,12 +27,12 @@ Hierarquia de decisão:
 1. AGENTS.md
 2. DESIGN.md
 3. ACCEPTANCE_CRITERIA.md
-4. ROUTES.md / COMPONENTS.md / CONTENT.md / PRODUCT.md
+4. docs/specs/ROUTES.md / docs/specs/COMPONENTS.md / docs/specs/CONTENT.md / docs/specs/PRODUCT.md
 5. Pasta exportada do Google Stitch
 6. Imagens e screenshots de referência
 ```
 
-O Codex deve implementar uma base limpa em:
+O assistente de IA deve implementar uma base limpa em:
 
 ```txt
 apps/web  -> Next.js + React + TypeScript + Tailwind CSS
@@ -49,18 +49,18 @@ Use versões estáveis e LTS quando aplicável. Não use preview/canary/nightly.
 Use este primeiro. Ele não deve escrever código.
 
 ```txt
-Leia todos os arquivos de documentação na raiz do projeto:
+Leia os arquivos de documentação obrigatórios (lista em AGENTS.md e `docs/README.md`):
 
 - AGENTS.md
 - DESIGN.md
 - README.md
-- PRODUCT.md
-- ROUTES.md
-- COMPONENTS.md
-- CONTENT.md
-- IMPLEMENTATION_PLAN.md
+- docs/specs/PRODUCT.md
+- docs/specs/ROUTES.md
+- docs/specs/COMPONENTS.md
+- docs/specs/CONTENT.md
+- docs/process/IMPLEMENTATION_PLAN.md
 - ACCEPTANCE_CRITERIA.md
-- CODEX_PROMPTS.md
+- docs/ai/AI_PROMPTS.md
 
 A pasta de exportação do Google Stitch está na raiz do projeto.
 
@@ -71,7 +71,7 @@ Antes de implementar qualquer coisa:
 3. Use o export do Stitch como referência visual e contextual.
 4. Não copie o código exportado cegamente.
 5. Não preserve uma arquitetura ruim apenas porque veio do export.
-6. A implementação final deve seguir AGENTS.md, DESIGN.md, ROUTES.md, COMPONENTS.md e ACCEPTANCE_CRITERIA.md.
+6. A implementação final deve seguir AGENTS.md, DESIGN.md, docs/specs/ROUTES.md, docs/specs/COMPONENTS.md e ACCEPTANCE_CRITERIA.md.
 
 A stack obrigatória é:
 
@@ -119,7 +119,7 @@ Siga:
 
 - AGENTS.md
 - DESIGN.md
-- IMPLEMENTATION_PLAN.md
+- docs/process/IMPLEMENTATION_PLAN.md
 - ACCEPTANCE_CRITERIA.md
 
 Crie a estrutura:
@@ -506,8 +506,8 @@ Implemente a Home page seguindo o design aprovado.
 Use:
 
 - DESIGN.md
-- CONTENT.md
-- COMPONENTS.md
+- docs/specs/CONTENT.md
+- docs/specs/COMPONENTS.md
 - Export do Google Stitch como referência visual
 - API de projetos para Featured Engineering Work
 
@@ -562,8 +562,8 @@ Implemente a página `/projects`.
 Use:
 
 - DESIGN.md
-- ROUTES.md
-- COMPONENTS.md
+- docs/specs/ROUTES.md
+- docs/specs/COMPONENTS.md
 - ACCEPTANCE_CRITERIA.md
 - Export do Google Stitch como referência visual
 - API .NET como fonte de dados
@@ -619,9 +619,9 @@ Implemente a página dinâmica `/projects/[slug]`.
 
 Use:
 
-- ROUTES.md
-- COMPONENTS.md
-- CONTENT.md
+- docs/specs/ROUTES.md
+- docs/specs/COMPONENTS.md
+- docs/specs/CONTENT.md
 - ACCEPTANCE_CRITERIA.md
 - Export do Google Stitch como referência visual
 - API .NET como fonte de dados
@@ -824,7 +824,7 @@ O README deve explicar:
 - Como fazer build
 - Como fazer deploy futuramente
 - Como o Google Stitch foi usado como referência visual
-- Como o Codex foi usado no workflow de implementação
+- Como assistentes de IA foram usados no workflow de implementação
 
 Não transforme o README em currículo.
 Não repita todo o conteúdo profissional do site.
@@ -833,7 +833,7 @@ O README deve ser técnico, claro e útil para quem abrir o repositório no GitH
 
 ---
 
-## Prompt de emergência — Quando o Codex começar a sair do escopo
+## Prompt de emergência — Quando o assistente de IA começar a sair do escopo
 
 ```txt
 Pare e revise o escopo.
@@ -845,8 +845,8 @@ Volte a seguir:
 - AGENTS.md
 - DESIGN.md
 - ACCEPTANCE_CRITERIA.md
-- COMPONENTS.md
-- ROUTES.md
+- docs/specs/COMPONENTS.md
+- docs/specs/ROUTES.md
 
 Não adicione novas seções.
 Não invente métricas.

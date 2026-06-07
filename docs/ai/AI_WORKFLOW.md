@@ -38,7 +38,7 @@ Use multi-agent review when the task benefits from independent read-only
 perspectives, such as architecture review, feature planning, PR review, security
 review or release readiness.
 
-Use reusable prompts in `.codex/prompts/` when the task follows a known pattern
+Use reusable prompts in `.agents/prompts/` when the task follows a known pattern
 but does not need parallel agents. Prompts are task starters, not permission to
 skip repository inspection.
 
@@ -49,8 +49,8 @@ prompts and agents, but do not replace repository inspection or validation.
 Repository AI files have different roles:
 
 - `AGENTS.md`: operational rules that agents must follow.
-- `.codex/agents/*.toml`: custom agent roles, permissions and instructions.
-- `.codex/prompts/*.md`: reusable task prompts.
+- `.agents/agents/*.toml`: custom agent roles, permissions and instructions.
+- `.agents/prompts/*.md`: reusable task prompts.
 - `.agents/skills/*/SKILL.md`: structured reusable workflows for repeatable
   engineering tasks.
 
@@ -110,7 +110,7 @@ should reduce blind spots, not expand the task.
 
 ## Prompt Library
 
-Reusable prompts live in `.codex/prompts/`. Each prompt includes:
+Reusable prompts live in `.agents/prompts/`. Each prompt includes:
 
 - Objective
 - When to use
