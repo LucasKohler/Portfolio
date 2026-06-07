@@ -34,3 +34,13 @@ Thumbs.db
 # Build outputs
 dist/
 coverage/
+
+# Python
+__pycache__/
+*.pyc
+
+# PlanBroker MCP flow (watcher + scripts)
+.cursor/plans/.watcher-state.json
+.cursor/plans/.mcp-flow.pids
+.cursor/plans/.active-workspace
+.cursor/plans/.pending-implementation.json

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "plans": [
+    {
+      "task_id": "verify-mcp-203225",
+      "filename": "verify-mcp-203225.md",
+      "title": "Verify",
+      "version": 1,
+      "created_at": "2026-06-06T23:32:25.524744+00:00",
+      "updated_at": "2026-06-06T23:32:25.524744+00:00",
+      "metadata": {
+        "source": "verify"
+      }
+    },
+    {
+      "task_id": "verify-mcp-204712",
+      "filename": "verify-mcp-204712.md",
+      "title": "Verify",
+      "version": 1,
+      "created_at": "2026-06-06T23:47:13.171095+00:00",
+      "updated_at": "2026-06-06T23:47:13.171095+00:00",
+      "metadata": {
+        "source": "verify"
+      }
+    },
+    {
+      "task_id": "verify-mcp-222721",
+      "filename": "verify-mcp-222721.md",
+      "title": "Verify",
+      "version": 1,
+      "created_at": "2026-06-07T01:27:22.007131+00:00",
+      "updated_at": "2026-06-07T01:27:22.007131+00:00",
+      "metadata": {
+        "source": "verify"
+      }
+    },
+    {
+      "task_id": "review-docs-md-structure",
+      "filename": "review-docs-md-structure.md",
+      "title": "Plan: Review Documentation (.md) Structure and Organization",
+      "version": 1,
+      "created_at": "2026-06-07T01:40:22.708834+00:00",
+      "updated_at": "2026-06-07T01:40:22.708834+00:00",
+      "metadata": {
+        "source": "grok-build",
+        "areas": [
+          "documentation"
+        ],
+        "review_focus": "md-structure-legibility-and-organization",
+        "priority": "normal",
+        "origin": "planning-agent"
+      }
+    }
+  ],
+  "latest_task_id": "review-docs-md-structure"
+}

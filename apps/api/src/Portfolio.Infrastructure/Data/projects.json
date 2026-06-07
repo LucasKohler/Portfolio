@@ -124,7 +124,7 @@
     "summary": "An experiment about using AI tools as part of a disciplined software engineering workflow instead of as a replacement for review and design judgment.",
     "category": ["AI Workflow"],
     "status": "Draft",
-    "stack": ["ChatGPT", "Claude", "Codex", "GitHub"],
+    "stack": ["AI Coding Assistants", "GitHub"],
     "featured": false,
     "repositoryUrl": null,
     "liveUrl": null,

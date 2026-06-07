@@ -89,14 +89,18 @@ export function ProjectCard({ project, variant = "default" }: ProjectCardProps) 
 
       <Link
         className={cn(
-          "flex min-h-14 items-center justify-between gap-4 border-t border-border bg-surface-inset px-6 font-mono text-sm font-semibold text-foreground transition-colors group-hover:text-primary",
+          "flex min-h-14 items-center justify-between gap-4 border-t border-border bg-surface-inset px-6 font-mono text-sm font-semibold text-foreground transition-colors group-hover:text-primary active:scale-[0.99] motion-reduce:active:scale-100",
           isCompact && "px-5",
         )}
         href={routes.projectDetail(project.slug)}
       >
         <span>View Project</span>
-        <span className="flex items-center gap-3 text-muted transition-colors group-hover:text-primary">
-          <ArrowRight aria-hidden="true" size={16} />
+        <span className="flex items-center gap-3 text-muted transition-[color,transform] duration-300 group-hover:text-primary">
+          <ArrowRight
+            aria-hidden="true"
+            className="transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transform-none"
+            size={16}
+          />
           <ProjectLinkIcon project={project} />
         </span>
       </Link>

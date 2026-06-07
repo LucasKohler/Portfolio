@@ -27,7 +27,7 @@ Nao use para formatacao cosmetica isolada, aprovacao automatica de PR ou impleme
 
 ## Workflow
 
-1. Use `.codex/prompts/multi-agent-pr-review.md` quando a revisao envolver multiplas dimensoes.
+1. Use `.agents/prompts/multi-agent-pr-review.md` quando a revisao envolver multiplas dimensoes.
 2. Mantenha a revisao read-only.
 3. Use `explorer` apenas se o diff nao fornecer contexto suficiente.
 4. Use `pr-reviewer` para bugs, regressões, contratos, performance, manutencao e escopo.
@@ -78,6 +78,6 @@ Exija decisao humana para merge, aceitacao de risco, breaking change, migration,
 
 ## Relação com agentes e prompts existentes
 
-- Use `.codex/prompts/multi-agent-pr-review.md` como prompt principal.
+- Use `.agents/prompts/multi-agent-pr-review.md` como prompt principal.
 - Use `pr-reviewer`, `qa-reviewer`, `security-reviewer`, `architect` e `explorer` conforme necessidade.
 - Respeite `CONTRIBUTING.md` para expectativas de PR e validacao.

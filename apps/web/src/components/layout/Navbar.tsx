@@ -23,7 +23,7 @@ export function Navbar() {
         className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8"
       >
         <Link
-          className="text-sm font-bold tracking-normal text-foreground transition-colors hover:text-primary sm:text-base"
+          className="text-sm font-bold tracking-normal text-foreground transition-[color,transform] duration-200 hover:text-primary active:scale-[0.98] motion-reduce:active:scale-100 sm:text-base"
           href={routes.home}
         >
           {siteConfig.author}
@@ -49,7 +49,7 @@ export function Navbar() {
             return (
               <Link
                 className={cn(
-                  "rounded px-3 py-2 text-sm text-muted transition-colors hover:bg-white/[0.05] hover:text-foreground",
+                  "rounded px-3 py-2 text-sm text-muted transition-[color,background-color,transform] duration-200 hover:bg-white/[0.05] hover:text-foreground active:scale-[0.97] motion-reduce:active:scale-100",
                   isActive &&
                     "border-b-2 border-primary text-primary hover:text-primary",
                 )}
@@ -65,14 +65,14 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <Link
             aria-label="Open terminal reference"
-            className="inline-flex size-9 items-center justify-center rounded border border-transparent text-muted transition-colors hover:border-border hover:bg-white/[0.05] hover:text-primary"
+            className="inline-flex size-9 items-center justify-center rounded border border-transparent text-muted transition-[color,background-color,border-color,transform] duration-200 hover:border-border hover:bg-white/[0.05] hover:text-primary active:scale-95 motion-reduce:active:scale-100"
             href="#"
           >
             <Terminal aria-hidden="true" size={17} strokeWidth={2} />
           </Link>
           <Link
             aria-label="Open code reference"
-            className="inline-flex size-9 items-center justify-center rounded border border-transparent text-muted transition-colors hover:border-border hover:bg-white/[0.05] hover:text-primary"
+            className="inline-flex size-9 items-center justify-center rounded border border-transparent text-muted transition-[color,background-color,border-color,transform] duration-200 hover:border-border hover:bg-white/[0.05] hover:text-primary active:scale-95 motion-reduce:active:scale-100"
             href="#"
           >
             <Code2 aria-hidden="true" size={17} strokeWidth={2} />

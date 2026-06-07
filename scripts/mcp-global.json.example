@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "plan-broker": {
+      "type": "stdio",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${userHome}/mcp-servers/plan-broker/run-broker.ps1"
+      ],
+      "env": {
+        "WORKSPACE_FOLDER": "${workspaceFolder}"
+      }
+    }
+  }
+}

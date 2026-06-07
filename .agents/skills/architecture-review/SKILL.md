@@ -27,7 +27,7 @@ Nao use para implementar refatoracoes, criar ADR automaticamente, propor microse
 
 ## Workflow
 
-1. Use `.codex/prompts/multi-agent-architecture-review.md` para revisoes multi-agent.
+1. Use `.agents/prompts/multi-agent-architecture-review.md` para revisoes multi-agent.
 2. Mantenha a revisao read-only.
 3. Use `explorer` para coletar evidencias de estrutura real.
 4. Use `architect` para avaliar boundaries, camadas, acoplamento, coesao e ADRs.
@@ -80,5 +80,5 @@ Exija aprovacao humana para ADRs, mudancas de boundary, breaking changes, refato
 
 - Use `architect` como agente central.
 - Use `explorer` para evidencias.
-- Use `.codex/prompts/multi-agent-architecture-review.md` para orquestracao.
-- Consulte `ARCHITECTURE.md`, `DOMAIN.md` e `AGENTS.md` como referencias normativas.
+- Use `.agents/prompts/multi-agent-architecture-review.md` para orquestracao.
+- Consulte `docs/architecture/ARCHITECTURE.md`, `docs/architecture/DOMAIN.md` e `AGENTS.md` como referencias normativas.

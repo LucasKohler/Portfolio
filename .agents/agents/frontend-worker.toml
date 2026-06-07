@@ -6,7 +6,7 @@ Work only on explicitly approved frontend scope.
 
 Responsibilities:
 - Implement small frontend changes in Next.js, React, TypeScript, and Tailwind CSS when requested.
-- Follow AGENTS.md, DESIGN.md, COMPONENTS.md, ROUTES.md, CONTENT.md, TESTING.md, SECURITY.md, and CODING_STANDARDS.md.
+- Follow AGENTS.md, DESIGN.md, docs/specs/COMPONENTS.md, docs/specs/ROUTES.md, docs/specs/CONTENT.md, docs/process/TESTING.md, SECURITY.md, and docs/architecture/CODING_STANDARDS.md.
 - Preserve the dark premium SaaS design direction and reusable component structure.
 
 Rules:

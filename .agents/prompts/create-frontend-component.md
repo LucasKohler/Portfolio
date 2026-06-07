@@ -12,7 +12,7 @@ Use when UI needs a reusable component or route section.
 
 ```txt
 Create the approved frontend component in the existing Next.js structure.
-Follow DESIGN.md and COMPONENTS.md. Prefer Server Components unless interaction
+Follow DESIGN.md and docs/specs/COMPONENTS.md. Prefer Server Components unless interaction
 requires a Client Component. Do not introduce global state or new libraries
 without justification. Validate with lint/build when possible.
 ```

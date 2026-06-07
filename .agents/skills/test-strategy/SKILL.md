@@ -78,5 +78,5 @@ Exija decisao humana para aceitar lacunas criticas, adiar testes de contrato, in
 ## Relação com agentes e prompts existentes
 
 - Use `qa-reviewer` como avaliador principal.
-- Use `.codex/prompts/create-unit-tests.md` e `.codex/prompts/create-integration-tests.md` quando houver aprovacao para implementar testes.
+- Use `.agents/prompts/create-unit-tests.md` e `.agents/prompts/create-integration-tests.md` quando houver aprovacao para implementar testes.
 - Use prompts multi-agent quando testes dependerem de arquitetura, seguranca ou contrato.

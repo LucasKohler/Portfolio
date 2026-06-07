@@ -103,7 +103,7 @@ export function ProjectFilters({
               <button
                 aria-pressed={isSelected}
                 className={cn(
-                  "min-h-9 rounded border px-3 font-mono text-sm transition-colors",
+                  "min-h-9 rounded border px-3 font-mono text-sm transition-[color,background-color,border-color,transform] duration-200 active:scale-[0.97] motion-reduce:active:scale-100",
                   isSelected
                     ? "border-primary bg-primary/10 text-foreground"
                     : "border-border bg-[rgba(255,255,255,0.05)] text-muted hover:border-[#444] hover:text-foreground",

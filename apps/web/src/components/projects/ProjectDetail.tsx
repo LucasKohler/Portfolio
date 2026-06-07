@@ -70,17 +70,31 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <SectionContainer className="py-12 md:py-16">
       <div className="mb-12 flex flex-col gap-5 font-mono text-sm text-muted md:flex-row md:items-center">
-        <Button href={routes.projects} size="sm" variant="secondary">
-          <ArrowLeft aria-hidden="true" size={16} />
+        <Button className="group" href={routes.projects} size="sm" variant="secondary">
+          <ArrowLeft
+            aria-hidden="true"
+            className="transition-transform duration-200 group-hover:-translate-x-0.5 motion-reduce:transform-none"
+            size={16}
+          />
           Back to Projects
         </Button>
 
         <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
-          <Link className="hover:text-foreground" href={routes.home}>
+          <Link
+            className="transition-colors duration-200 hover:text-foreground"
+            href={routes.home}
+          >
             Home
           </Link>
-          <ChevronRight aria-hidden="true" size={14} />
-          <Link className="hover:text-foreground" href={routes.projects}>
+          <ChevronRight
+            aria-hidden="true"
+            className="text-muted/70"
+            size={14}
+          />
+          <Link
+            className="transition-colors duration-200 hover:text-foreground"
+            href={routes.projects}
+          >
             Projects
           </Link>
           <ChevronRight aria-hidden="true" size={14} />

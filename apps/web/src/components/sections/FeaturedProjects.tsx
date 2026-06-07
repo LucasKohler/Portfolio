@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { ProjectCard } from "@/components/projects/ProjectCard";
+import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { SectionContainer } from "@/components/ui/SectionContainer";
@@ -24,11 +24,11 @@ export function FeaturedProjects({
       />
 
       {projects.length > 0 ? (
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} variant="compact" />
-          ))}
-        </div>
+        <ProjectGrid
+          className="mt-12 md:grid-cols-3"
+          projects={projects}
+          variant="compact"
+        />
       ) : (
         <Card className="mt-12 p-8">
           <p className="text-base leading-7 text-muted">

@@ -28,7 +28,7 @@ Nao use para correcoes triviais, ajustes puramente textuais, tarefas read-only o
 ## Workflow
 
 1. Entenda a feature antes de editar arquivos.
-2. Para features medias ou grandes, use `.codex/prompts/multi-agent-feature-plan.md`.
+2. Para features medias ou grandes, use `.agents/prompts/multi-agent-feature-plan.md`.
 3. Use `explorer` para localizar arquivos, modulos, fluxos, contratos e testes relevantes.
 4. Use `architect` quando houver impacto em boundaries, camadas, contratos ou ADR.
 5. Consolide um plano unico com escopo, etapas, riscos, testes e validacoes.
@@ -80,6 +80,6 @@ Exija aprovacao humana para tarefas write-heavy, breaking changes, migrations, a
 ## Relação com agentes e prompts existentes
 
 - Use `explorer` e `architect` antes de implementacoes relevantes.
-- Use `.codex/prompts/multi-agent-feature-plan.md` para planejamento multi-agent.
+- Use `.agents/prompts/multi-agent-feature-plan.md` para planejamento multi-agent.
 - Use `backend-worker` e `frontend-worker` somente apos plano aprovado.
 - Use `qa-reviewer` e `security-reviewer` para revisar testes e riscos antes do fechamento.

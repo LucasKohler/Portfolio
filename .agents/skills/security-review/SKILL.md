@@ -27,7 +27,7 @@ Nao use para rotacionar secrets, alterar producao, configurar MCP externo, aplic
 
 ## Workflow
 
-1. Use `.codex/prompts/multi-agent-security-review.md`.
+1. Use `.agents/prompts/multi-agent-security-review.md`.
 2. Mantenha a revisao read-only.
 3. Use `security-reviewer` como agente principal.
 4. Use `explorer` para localizar arquivos sensiveis.
@@ -81,5 +81,5 @@ Exija intervencao humana para secrets reais, auth/autorizacao, dados pessoais, c
 ## Relação com agentes e prompts existentes
 
 - Use `security-reviewer` como agente central.
-- Use `.codex/prompts/multi-agent-security-review.md` para orquestracao.
+- Use `.agents/prompts/multi-agent-security-review.md` para orquestracao.
 - Respeite `SECURITY.md`, `AGENTS.md` e as restricoes de sandbox dos agentes.
