@@ -39,6 +39,10 @@ coverage/
 __pycache__/
 *.pyc
 
+# Local MCP config (machine-specific paths)
+.claude.json
+.mcp.json
+
 # PlanBroker MCP flow (watcher + scripts)
 .cursor/plans/.watcher-state.json
 .cursor/plans/.mcp-flow.pids
